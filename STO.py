@@ -1,5 +1,6 @@
 from PIL import Image
 from shutil import which
+from sys import exit
 import io
 import img2pdf
 import os
@@ -86,7 +87,11 @@ def main():
             file = os.path.join(arg, file)
             r = process_image(file, thr)
             image_list.append(r)
-        fn = os.path.basename(arg) + ".pdf"
+        if arg == os.path.curdir:
+            here = os.getcwd()
+            fn = os.path.join(here, os.path.basename(here)) + ".pdf"
+        else:
+            fn = os.path.basename(arg) + ".pdf"
         with open(fn, "wb") as f:
             f.write(img2pdf.convert(image_list))
     else:
