@@ -1,13 +1,10 @@
 # Scanned-Text-Optimizer
-Python script that converts images of text to an optimized, true monochrome PDF.
-Can make use of Ghostscript ([if installed]((https://www.ghostscript.com/download.html))) to compress the resulting files even further.
+Platform-independent Python script that converts images of text to an optimized, true monochrome PDF.
+New version has a file/directory picker and automatically chooses the black/white threshold.
+Source files will be modified, but only lossless compression is applied.
+Only JPEG and PNG files are supported. Scans yield the best results.
 
-## Usage
-> Input - **Required** - File or directory to convert ("./" for current directory)
-
-> Compression level - Optional - Only used for Ghostscript compression, 0-4, defaults to 4 (max quality)
-
-> Black threshold - Optional - Minimum light level required for a pixel to be black, otherwise it will be white, 0-255, defaults to 127
 
 ## Dependencies
-Makes use of [Pillow](https://pypi.org/project/Pillow/), [IMG2PDF](https://pypi.org/project/img2pdf/) and [Ghostscript](https://www.ghostscript.com/) 
+Needs [Pillow](https://pypi.org/project/Pillow/), [IMG2PDF](https://pypi.org/project/img2pdf/) and [EasyGUI](https://pypi.org/project/easygui/).
+Can make use of [ExifTool](https://exiftool.org/), [Pngcrush](https://pmt.sourceforge.io/pngcrush/), [Jpegoptim](https://github.com/tjko/jpegoptim) and [Ghostscript](https://www.ghostscript.com/) if they are installed.
